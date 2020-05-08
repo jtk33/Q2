@@ -1586,7 +1586,8 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 			level.exitintermission = true;
 		return;
 	}
-
+	if (ent->client->thrusting)
+		ApplyThrust(ent);
 	pm_passent = ent;
 
 	if (ent->client->chase_target) {
@@ -1741,6 +1742,7 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 		if (other->inuse && other->client->chase_target == ent)
 			UpdateChaseCam(other);
 	}
+
 }
 
 

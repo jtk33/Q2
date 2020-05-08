@@ -315,13 +315,13 @@ void HelpComputer (edict_t *ent)
 
 	// send the layout
 	Com_sprintf (string, sizeof(string),
-		"xv 32 yv 8 picn help "			// background
-		"xv 202 yv 12 string2 \"%s\" "		// skill
-		"xv 0 yv 24 cstring2 \"%s\" "		// level name
-		"xv 0 yv 54 cstring2 \"%s\" "		// help 1
-		"xv 0 yv 110 cstring2 \"%s\" "		// help 2
-		"xv 50 yv 164 string2 \" kills     goals    secrets\" "
-		"xv 50 yv 172 string2 \"%3i/%3i     %i/%i       %i/%i\" ", 
+		"xv 32 yv 8000 picn help "			// background
+		"xv -400 yv -300 string2 \"%s\" "		// skill
+		"xv 0 yv -300 cstring2 \"%s\" "		// level name
+		"xv 0 yv 150 cstring2 \"%s\" "		// help 1
+		"xv 0 yv 200 cstring2 \"%s\" "		// help 2
+		"xv 50 yv 500 string2 \" kills     goals    secrets\" "
+		"xv 50 yv 512 string2 \"%3i/%3i     %i/%i       %i/%i\" ", 
 		sk,
 		level.level_name,
 		game.helpmessage1,

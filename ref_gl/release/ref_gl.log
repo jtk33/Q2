@@ -1,0 +1,23 @@
+﻿Build started 5/8/2020 7:55:39 AM.
+     1>Project "C:\Users\fyras\Git\quake2-full\ref_gl\ref_gl.vcxproj" on node 4 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\..\release\ref_gl.dll" /INCREMENTAL:NO /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\ref_gl.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\..\release\ref_gl.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\..\release\ref_gl.lib" /MACHINE:X86 /SAFESEH /DLL .\release\gl_draw.obj
+         .\release\gl_image.obj
+         .\release\gl_light.obj
+         .\release\gl_mesh.obj
+         .\release\gl_model.obj
+         .\release\gl_rmain.obj
+         .\release\gl_rmisc.obj
+         .\release\gl_rsurf.obj
+         .\release\gl_warp.obj
+         .\release\glw_imp.obj
+         .\release\q_shared.obj
+         .\release\q_shwin.obj
+         .\release\qgl_win.obj
+            Creating library .\..\release\ref_gl.lib and object .\..\release\ref_gl.exp
+         ref_gl.vcxproj -> C:\Users\fyras\Git\quake2-full\ref_gl\.\..\release\ref_gl.dll
+     1>Done Building Project "C:\Users\fyras\Git\quake2-full\ref_gl\ref_gl.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.17

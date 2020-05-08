@@ -1,0 +1,78 @@
+﻿Build started 5/8/2020 7:55:42 AM.
+     1>Project "C:\Users\fyras\Git\quake2-full\ref_soft\ref_soft.vcxproj" on node 5 (Build target(s)).
+     1>CustomBuild:
+         Performing Custom Build Tools
+          Assembling: C:\Users\fyras\Git\quake2-full\ref_soft\r_aclipa.asm
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\fyras\Git\quake2-full\ref_soft\r_draw16.asm
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\fyras\Git\quake2-full\ref_soft\r_drawa.asm
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\fyras\Git\quake2-full\ref_soft\r_edgea.asm
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\fyras\Git\quake2-full\ref_soft\r_polysa.asm
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\fyras\Git\quake2-full\ref_soft\r_scana.asm
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\fyras\Git\quake2-full\ref_soft\r_spr8.asm
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\fyras\Git\quake2-full\ref_soft\r_surf8.asm
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\fyras\Git\quake2-full\ref_soft\r_varsa.asm
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\..\release\ref_soft.dll" /INCREMENTAL:NO /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\ref_soft.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\..\release\ref_soft.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\..\release\ref_soft.lib" /MACHINE:X86 /SAFESEH /DLL .\..\release\\.obj
+         .\release\q_shared.obj
+         .\release\q_shwin.obj
+         .\release\r_aclip.obj
+         .\release\r_alias.obj
+         .\release\r_bsp.obj
+         .\release\r_draw.obj
+         .\release\r_edge.obj
+         .\release\r_image.obj
+         .\release\r_light.obj
+         .\release\r_main.obj
+         .\release\r_misc.obj
+         .\release\r_model.obj
+         .\release\r_part.obj
+         .\release\r_poly.obj
+         .\release\r_polyse.obj
+         .\release\r_rast.obj
+         .\release\r_scan.obj
+         .\release\r_sprite.obj
+         .\release\r_surf.obj
+         .\release\rw_ddraw.obj
+         .\release\rw_dib.obj
+         .\release\rw_imp.obj
+     1>LINK : fatal error LNK1181: cannot open input file '.\..\release\\.obj'
+     1>Done Building Project "C:\Users\fyras\Git\quake2-full\ref_soft\ref_soft.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.79

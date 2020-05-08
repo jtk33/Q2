@@ -242,7 +242,6 @@ typedef struct gitem_s
 	char		*world_model;
 	int			world_model_flags;
 	char		*view_model;
-
 	// client side info
 	char		*icon;
 	char		*pickup_name;	// for printing on pickup
@@ -260,7 +259,7 @@ typedef struct gitem_s
 	char		*precaches;		// string of all models, sounds, and images this item will use
 } gitem_t;
 
-
+qboolean	HEV;
 
 //
 // this structure is left intact through an entire game
@@ -959,6 +958,9 @@ struct gclient_s
 
 	edict_t		*chase_target;		// player we are chasing
 	qboolean	update_chase;		// need to update chase info?
+
+	qboolean        thrusting;
+	float           next_thrust_sound;
 };
 
 

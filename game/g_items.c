@@ -586,9 +586,20 @@ qboolean Pickup_Health (edict_t *ent, edict_t *other)
 }
 
 //======================================================================
-
+HEV = false;
 int ArmorIndex (edict_t *ent)
 {
+	if (!ent->client)
+	{
+		ent->speed = 150;
+		HEV = false;
+	}
+	else if (ent->client->pers.inventory[jacket_armor_index] > 0 || ent->client->pers.inventory[combat_armor_index] > 0 || ent->client->pers.inventory[body_armor_index] > 0)
+	{
+		HEV = true;
+		ent->speed = 200;
+	}
+		
 	if (!ent->client)
 		return 0;
 

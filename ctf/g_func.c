@@ -236,7 +236,10 @@ void plat_CalcAcceleratedMove(moveinfo_t *moveinfo)
 {
 	float	accel_dist;
 	float	decel_dist;
+	//if (HEV)
+	//{
 
+	//}
 	moveinfo->move_speed = moveinfo->speed;
 
 	if (moveinfo->remaining_distance < moveinfo->accel)

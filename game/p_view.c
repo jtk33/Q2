@@ -500,7 +500,7 @@ P_FallingDamage
 */
 void P_FallingDamage (edict_t *ent)
 {
-	float	delta;
+	/*float	delta;
 	int		damage;
 	vec3_t	dir;
 
@@ -566,7 +566,8 @@ void P_FallingDamage (edict_t *ent)
 	{
 		ent->s.event = EV_FALLSHORT;
 		return;
-	}
+	}*/
+	return;
 }
 
 
