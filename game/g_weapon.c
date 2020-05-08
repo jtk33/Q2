@@ -257,7 +257,92 @@ pistols, rifles, etc....
 */
 void fire_bullet(edict_t *self, vec3_t start, vec3_t aimdir, int damage, int kick, int hspread, int vspread, int mod)
 {
-	fire_lead(self, start, aimdir, damage, kick, TE_GUNSHOT, hspread, vspread, mod);
+	edict_t	*ent;
+	edict_t	*ignore;
+	vec3_t	point;
+	vec3_t	dir;
+	vec3_t	end;
+	trace_t	tr;
+	
+	ent = NULL;
+	while ((ent = findradius(ent, self->s.origin, 256)) != NULL)
+	{
+		if (ent == self)
+			continue;
+
+		if (ent == self->owner)
+			continue;
+
+		if (!ent->takedamage)
+			continue;
+
+		if (!(ent->svflags & SVF_MONSTER) && (!ent->client) && (strcmp(ent->classname, "misc_explobox") != 0))
+			continue;
+		VectorMA(ent->absmin, 0.5, ent->size, point);
+
+		VectorSubtract(point, self->s.origin, dir);
+		VectorNormalize(dir);
+
+		ignore = self;
+		VectorCopy(self->s.origin, start);
+		VectorMA(start, 2048, dir, end);
+		while (1)
+		{
+			tr = gi.trace(start, NULL, NULL, end, ignore, CONTENTS_SOLID | CONTENTS_MONSTER | CONTENTS_DEADMONSTER);
+
+			if (!tr.ent)
+				break;
+			VectorCopy(start, ent->s.origin);
+			// if we hit something that's not a monster or player we're done
+			if (!(tr.ent->svflags & SVF_MONSTER) && (!tr.ent->client))
+			{
+				gi.WriteByte(svc_temp_entity);
+				gi.WriteByte(TE_LASER_SPARKS);
+				gi.WriteByte(4);
+				gi.WritePosition(tr.endpos);
+				gi.WriteDir(tr.plane.normal);
+				gi.WriteByte(self->s.skinnum);
+				gi.multicast(tr.endpos, MULTICAST_PVS);
+				break;
+			}
+
+			ignore = tr.ent;
+			VectorCopy(tr.endpos, start);
+		}
+		/*VectorMA(ent->absmin, 0.5, ent->size, point);
+		VectorSubtract(point, self->s.origin, dir);
+		VectorNormalize(dir);
+		ignore = self;
+		VectorCopy(self->s.origin, start);
+		VectorMA(start, 10, dir, end);
+		//AngleVectors(start, forward, NULL, NULL);
+		/*VectorCopy(start, gpos);
+		gpos[0] += forward[0] * 100;
+		gpos[1] += forward[1] * 100;
+		gpos[2] += forward[2] * 100;
+		VectorCopy(gpos, start);
+		if (ent->client)
+		{
+		SV_Push(ent, start, ent->s.origin);
+
+		}*/
+		/*gi.WriteByte(svc_temp_entity);
+		gi.WriteByte(TE_LASER_SPARKS);
+		gi.WriteByte(4);
+		gi.WritePosition(tr.endpos);
+		gi.WriteDir(tr.plane.normal);
+		gi.WriteByte(self->s.skinnum);
+		gi.multicast(tr.endpos, MULTICAST_PVS);*/
+
+		//ignore = tr.ent;
+		//VectorCopy(tr.endpos, start);
+		//edict_t *ent;
+		//self->dmg_radius = 5;
+		//VectorCopy(-start, start);
+		//fire_lead(self, start, aimdir, 0, kick, TE_GUNSHOT, hspread, vspread, mod);
+		//while ((ent = findradius(ent, self->s.origin, self->dmg_radius)) != NULL)
+		
+	}
 }
 
 
